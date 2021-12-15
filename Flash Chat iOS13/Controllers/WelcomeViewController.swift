@@ -9,9 +9,9 @@
 import UIKit
 import CLTypingLabel
 
-class WelcomeViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
 
-    @IBOutlet weak var titleLabel: CLTypingLabel!
+    @IBOutlet private weak var titleLabel: CLTypingLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

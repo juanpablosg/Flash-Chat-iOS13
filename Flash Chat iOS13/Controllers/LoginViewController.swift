@@ -9,13 +9,13 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
 
-    @IBOutlet weak var emailTextfield: UITextField!
-    @IBOutlet weak var passwordTextfield: UITextField!
+    @IBOutlet private weak var emailTextfield: UITextField!
+    @IBOutlet private weak var passwordTextfield: UITextField!
     
 
-    @IBAction func loginPressed(_ sender: UIButton) {
+    @IBAction private func loginPressed(_ sender: UIButton) {
         
         guard let email = emailTextfield.text, let password = passwordTextfield.text else { return }
         

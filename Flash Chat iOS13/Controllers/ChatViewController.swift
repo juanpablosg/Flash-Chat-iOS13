@@ -10,14 +10,14 @@ import UIKit
 import Firebase
 import os.log
 
-class ChatViewController: UIViewController {
+final class ChatViewController: UIViewController {
     
-    @IBOutlet weak private var tableView: UITableView!
-    @IBOutlet weak var messageTextfield: UITextField!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var messageTextfield: UITextField!
     
-    let db = Firestore.firestore()
+    private let db = Firestore.firestore()
     
-    var messages: [Message] = [
+    private var messages: [Message] = [
         Message(sender: "1@2.com", body: "Hey!"),
         Message(sender: "a@b.com", body: "Hello!"),
         Message(sender: "1@2.com", body: "Wha's up?!")
@@ -35,7 +35,7 @@ class ChatViewController: UIViewController {
         
     }
     
-    @IBAction func sendPressed(_ sender: UIButton) {
+    @IBAction private func sendPressed(_ sender: UIButton) {
         
         guard let messageBody = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email else { return }
         
@@ -50,7 +50,7 @@ class ChatViewController: UIViewController {
         
     }
     
-    @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
+    @IBAction private func logOutPressed(_ sender: UIBarButtonItem) {
         
         do {
             try Auth.auth().signOut()
